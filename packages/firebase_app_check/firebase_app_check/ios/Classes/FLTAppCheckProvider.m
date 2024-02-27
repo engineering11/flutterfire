@@ -23,7 +23,7 @@
   }
 
   if ([providerName isEqualToString:@"deviceCheck"]) {
-    self.delegateProvider = [[FIRDeviceCheckProvider new] initWithApp:app];
+    self.delegateProvider = [[FIRDeviceCheckProvider alloc] initWithApp:app];
   }
 
   if ([providerName isEqualToString:@"appAttest"]) {
@@ -31,7 +31,7 @@
       self.delegateProvider = [[FIRAppAttestProvider alloc] initWithApp:app];
     } else {
       // This is not a valid environment, setup debug provider.
-      self.delegateProvider = [[FIRAppCheckDebugProvider new] initWithApp:app];
+      self.delegateProvider = [[FIRAppCheckDebugProvider alloc] initWithApp:app];
     }
   }
 
